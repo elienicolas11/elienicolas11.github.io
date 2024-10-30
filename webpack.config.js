@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    assetModuleFilename: 'assets/[hash][ext][query]', // Custom output path for assets
   },
   module: {
     rules: [
@@ -17,8 +18,13 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/, // Add this rule
+        test: /\.css$/, 
         use: ['style-loader', 'css-loader'], // Loaders for CSS
+      },
+      {
+        // For image files (PNG, JPG, GIF, SVG)
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource', // Webpack 5 built-in asset type
       },
     ]
   },
