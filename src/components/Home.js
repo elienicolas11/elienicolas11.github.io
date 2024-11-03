@@ -1,13 +1,52 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Container, Row, Col } from 'react-bootstrap';
+import mainHomeImage from '../assets/images/main-home-image.png';
+import colorfulBg from '../assets/images/colorful-background.png';
+import gearWheel from '../assets/images/gear-wheel.png';
+
 import 'C:/Users/Admin/Desktop/React/Portfolio/src/styles/Home.css';
 
-const Home = () => {
+export const Home = () => {
   return (
-    <div className="home-container">
-      <h1 className="home-title">Welcome to My Home Page</h1>
-      <p className="home-description">This is the main page of the application.</p>
-    </div>
-  );
-};
+    <section className='home'>
+      <Container>
+        <Row className='align-items-center'>
+          <Col xs={12} md={2} xl={2} className="home-text-container">
+            <span className='home-text-left'>
+              <h1>Developer</h1>
+              With a passion for creating websites and software
+            </span>
 
-export default Home;
+          </Col>
+          <Col xs={12} md={8} xl={8}>
+            <div className="image-container">
+              <motion.img
+                src={gearWheel}
+                alt="Gear Wheel"
+                className="main-home-gear-wheel"
+                animate={{ rotate: [0, 360] }}
+                transition={{duration: 20,repeat: Infinity,ease: "easeIn",repeatDelay: 90 }}
+              />
+              <img src={mainHomeImage} alt="Main Home Image" className="main-home-image" />
+              <motion.img
+                src={colorfulBg}
+                alt="Colors"
+                className="main-home-colors"
+                initial={{ opacity: 0.2, scale: 0.5 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{duration: 20,ease: "easeOut", repeat: Infinity, repeatDelay: 90 }}
+              />
+            </div>
+          </Col>
+          <Col xs={12} md={2} xl={2} className="home-text-container">
+            <span className='home-text-right'>
+              <h1>Designer</h1>
+              With a passion for blending functionality and aesthetics.
+            </span>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  )
+}

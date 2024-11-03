@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo.svg';
 import navGithub from '../assets/images/nav-github.svg';
 import navLinkedIn from '../assets/images/nav-linkedin.svg'; 
 import navInstagram from '../assets/images/nav-instagram.svg';
@@ -24,7 +24,6 @@ export const NavbarComponent = () => {
     }
 
     window.addEventListener("scroll", onScroll);  
-
     return () => window.removeEventListener("scroll", onScroll);
   },[])
   

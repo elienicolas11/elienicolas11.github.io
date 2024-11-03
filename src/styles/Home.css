@@ -1,15 +1,56 @@
-.home-container {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .home-title {
-    font-size: 2.5em;
-    color: #333;
-  }
-  
-  .home-description {
-    font-size: 1.2em;
-    color: #666;
-  }
+.home{
+  margin: 100px 0;
+  height: 85vh;
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 
+.home-text-container {
+  position: relative;
+  height: 100%;
+}
+
+.home-text-left {
+  position: absolute;
+  bottom: 5vh; 
+  left: 5vh; 
+}
+
+.home-text-right {
+  position: absolute;
+  top: 5vh; 
+  left: 5vh; 
+}
+
+
+.image-container {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} 
+
+.main-home-gear-wheel {
+  position: absolute;
+  width: 50%; /* Réduit la taille à 50% */
+  height: auto;
+  z-index: 1; /* Place l'élément derrière */
+  left: 15%;
+}
+.main-home-colors{
+  position: absolute;
+  width: 80%; /* Réduit la taille à 50% */
+  height: auto;
+  z-index: 1;
+  left: 29%;
+}
+
+.main-home-image {
+  position: relative;
+  z-index: 2; 
+  width: 100%;
+  height: auto;
+}

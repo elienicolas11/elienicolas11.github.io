@@ -29,8 +29,8 @@ body{
     font-weight: 400;
     overflow-x: hidden;
     position: relative;
-    background-color: #ece9e9 !important;
-    color: #fff !important;
+    background-color: #d6d6d6 !important;
+    color: #ffffff !important;
     font-family: 'Centra', sans-serif !important;
 }
 
@@ -38,6 +38,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0; 
     line-height: normal;
+}
+
+h1, h2 {
+    font-weight: 700; 
+}
+
+h3, h4 {
+    font-weight: 500;
 }
 
 /************ Navbar Css ************/
