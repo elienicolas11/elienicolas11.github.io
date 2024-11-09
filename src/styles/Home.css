@@ -1,6 +1,5 @@
 .home{
-  margin: 100px 0;
-  height: 85vh;
+  margin: 15vh 0;
   position: relative; 
   display: flex;
   justify-content: center;
@@ -11,19 +10,6 @@
   position: relative;
   height: 100%;
 }
-
-.home-text-left {
-  position: absolute;
-  bottom: 5vh; 
-  left: 5vh; 
-}
-
-.home-text-right {
-  position: absolute;
-  top: 5vh; 
-  left: 5vh; 
-}
-
 
 .image-container {
   position: relative; 

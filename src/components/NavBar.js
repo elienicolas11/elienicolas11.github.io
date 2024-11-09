@@ -8,7 +8,7 @@ import Logo from '../assets/images/logo.svg';
 import navGithub from '../assets/images/nav-github.svg';
 import navLinkedIn from '../assets/images/nav-linkedin.svg'; 
 import navInstagram from '../assets/images/nav-instagram.svg';
-
+import 'C:/Users/Admin/Desktop/React/Portfolio/src/styles/NavBar.css';
 
 export const NavbarComponent = () => {
   const [activeLink, setActiveLink] = useState('home');

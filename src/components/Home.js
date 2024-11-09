@@ -13,11 +13,8 @@ export const Home = () => {
       <Container>
         <Row className='align-items-center'>
           <Col xs={12} md={2} xl={2} className="home-text-container">
-            <span className='home-text-left'>
               <h1>Developer</h1>
               With a passion for creating websites and software
-            </span>
-
           </Col>
           <Col xs={12} md={8} xl={8}>
             <div className="image-container">
@@ -40,10 +37,8 @@ export const Home = () => {
             </div>
           </Col>
           <Col xs={12} md={2} xl={2} className="home-text-container">
-            <span className='home-text-right'>
               <h1>Designer</h1>
               With a passion for blending functionality and aesthetics.
-            </span>
           </Col>
         </Row>
       </Container>
