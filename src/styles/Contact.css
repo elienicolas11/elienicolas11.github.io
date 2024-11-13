@@ -1,0 +1,112 @@
+.contact-section {
+    max-height: 100vh; 
+    padding: 10% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+}
+
+.inline-text {
+    display: inline;
+    margin: 0; 
+}
+
+.contact-us-title h3, .contact-us-title h1 {
+    font-size: 4em; 
+}
+
+.contact-us-description {
+    max-width: 90%; 
+    line-height: 2.0;
+    font-size: 1em;
+    margin-bottom: 8%;
+    margin-top: 5%; 
+}
+
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.contact-info img {
+    margin-right: 8px;
+    max-width: 40px;
+    width: 20%;
+    height: auto;
+    object-fit: contain;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Form Style*/ 
+.Contact-form-container {
+    padding-top: 10% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.Contact-form-container form {
+    width: 100%;
+    text-align: center;
+}
+
+.Contact-form-container input,
+.Contact-form-container textarea {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #ccc; 
+    transition: border 0.3s ease;
+    color: #778899; 
+}
+
+input:focus, textarea:focus {
+    border: 2px solid #778899;
+}
+
+input:hover, textarea:hover {
+    border: 2px solid white;
+}
+
+input:focus:hover, textarea:focus:hover {
+    border: 2px solid #778899;
+}
+
+/*Style button*/
+.Contact-form-container button {
+    margin: 15px;
+    padding: 12px 14px;
+    color: #fff;
+    background-color: #778899;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Ajout de la transition pour box-shadow */
+    align-self: center;
+}
+
+.Contact-form-container button:hover {
+    background-color: #5f6a74;  /* Changer la couleur de fond lors du survol */
+    transform: scale(1.05);     /* Légère augmentation de la taille */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+}
+
+.Contact-form-container button:focus {
+    outline: none;  
+    box-shadow: 0 0 10px rgba(118, 136, 153, 0.8); /* Ombrage spécifique au focus */
+}
+
+.Contact-form-container button:active {
+    transform: scale(0.98);  /* Réduction de la taille lors du clic pour simuler un appui */
+    background-color: #4e5b66;  /* Change la couleur de fond pour l'effet de clic */
+}
