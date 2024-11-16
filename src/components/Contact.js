@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 import '../styles/Contact.css'
+import { CustomAlert } from './CustomAlert';
 
 
 import phoneNumber from '../assets/images/contact-phone-number.png'
@@ -19,6 +20,8 @@ export const Contact = () => {
         message: '',
     });
 
+    const [alert, setAlert] = useState({ show: false, message: '' });
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (name === 'phone' && /[^0-9]/.test(value)) {
@@ -31,20 +34,29 @@ export const Contact = () => {
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault(); //Empêche le comportement par défaut d’un événement dans le navigateur
-
-        // Envoyer l'email via EmailJS
+        event.preventDefault(); 
+        
         emailjs.send('service_pd8zpij', 'template_mlykwas', formData, 'BxcN_Y77EXF3XMXk8')
             .then((result) => {
-                console.log('Email envoyé avec succès:', result.text);
-                alert('Message envoyé avec succès!');
+                console.log('Email sent successfully:', result.text);
+                setAlert({ show: true, message: 'Email sent successfully!' });
             })
             .catch((error) => {
-                console.error('Erreur lors de l\'envoi de l\'email:', error);
-                alert('Une erreur est survenue, veuillez réessayer.');
+                console.error('An error has occurred, please try again.:', error);
+                setAlert({ show: true, message: 'An error has occurred, please try again.' });
             });
     }
 
+    const closeAlert = () => {
+        setAlert({ show: false, message: '' });
+        setFormData({
+            firstName: '',
+            lastName: '',
+            phone: '',
+            email: '',
+            message: '',
+        });
+    };
 
     return (
         <section id="contact" className="contact-section">
@@ -101,8 +113,8 @@ export const Contact = () => {
 
                             <input
                                 type="tel"
-                                id="phone"  
-                                name="phone"  
+                                id="phone"
+                                name="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
                                 required
@@ -128,6 +140,9 @@ export const Contact = () => {
                             />
 
                             <button type="submit">Send message</button>
+
+                            /* Display the CustomAlert */
+                            <CustomAlert show={alert.show} message={alert.message} onClose={closeAlert} />
                         </form>
                     </Col>
                 </Row>
