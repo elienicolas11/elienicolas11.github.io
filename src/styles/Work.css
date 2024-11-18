@@ -1,0 +1,45 @@
+.work{
+    padding-top: 106px;
+}
+
+.work .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.introduction-column {
+    padding: 4%;
+}
+
+.introduction-column, .left-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;  
+    border-radius: 5vh;
+    background-color: #b8b7b7 ;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.left-column {
+    padding: 1% 0;
+    align-items: center;
+    
+}
+
+.left-column h6{
+    line-height: 0.5;
+}
+
+.projects-number {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: linear-gradient(-65deg, #b8b7b7 40%, #778899 40%);
+    position: relative;
+    border: 1px solid #778899;
+  }

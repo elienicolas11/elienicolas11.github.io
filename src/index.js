@@ -1,7 +1,17 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client'; 
+import ReactDOM from 'react-dom/client'; 
 import App from './components/App';
+import Work from './components/Work';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const root = createRoot(document.getElementById('root')); // Create a root
-root.render(<App />); // Render the app
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/*" element={<App />} /> {/* App principale */}
+      <Route path="/work" element={<Work />} /> {/* Page Work */}
+    </Routes>
+  </BrowserRouter>
+);
