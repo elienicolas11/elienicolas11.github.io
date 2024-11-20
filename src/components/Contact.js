@@ -141,7 +141,6 @@ export const Contact = () => {
 
                             <button type="submit">Send message</button>
 
-                            /* Display the CustomAlert */
                             <CustomAlert show={alert.show} message={alert.message} onClose={closeAlert} />
                         </form>
                     </Col>

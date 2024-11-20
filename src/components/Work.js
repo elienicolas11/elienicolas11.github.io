@@ -1,24 +1,73 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { NavbarComponent } from './NavBar';
 import workImage from '../assets/images/work-image.png';
 import workCircleBlue from '../assets/images/work-circle-blue.png';
-import workCircleWhite from '../assets/images/work-circle-White.png';
+import workCircleOrange from '../assets/images/work-circle-orange.png';
 import workCircleGreen from '../assets/images/work-circle-green.png';
+
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+import { workData } from './WorkData';
+import { WorkDetails } from './WorkDetails.js';
+
 import '../styles/Work.css';
+import { color } from 'chart.js/helpers';
 
 const Work = () => {
 
-    const ProfessionalWork = 2;
-    const AcademicWork = 1;
-    const PersonalWork = 2;
+    const totalCards = workData.length;
+    const { AcademicWork, ProfessionalWork, PersonalWork } = workData.reduce(
+        (acc, work) => {
+            if (work.category === 'Academic Work') acc.AcademicWork += 1;
+            if (work.category === 'Professional Work') acc.ProfessionalWork += 1;
+            if (work.category === 'Personal Work') acc.PersonalWork += 1;
+            return acc;
+        },
+        { AcademicWork: 0, ProfessionalWork: 0, PersonalWork: 0 }
+    );
+
+    // Données pour le graphique
+    const chartData = {
+        labels: ['Academic Work', 'Professional Work', 'Personal Work'],
+        datasets: [
+            {
+                label: 'Work Distribution',
+                data: [AcademicWork, ProfessionalWork, PersonalWork],
+                backgroundColor: ['#4A81CF', '#095D40', '#FEB201'],
+                borderWidth: 1,
+            },
+        ],
+    };
+
+    const chartOptions = {
+        plugins: {
+            legend: { display: true, labels: { color: '#fff' } },
+        },
+        responsive: true,
+    };
+
+    const [selectedCard, setSelectedCard] = useState(null); // Stocker la carte sélectionnée
+
+    // Fonction pour ouvrir la fenêtre de détails
+    const handleCardClick = (work) => {
+        setSelectedCard(work);
+    };
+    // Fonction pour fermer la fenêtre de détails
+    const handleCloseDetails = () => {
+        setSelectedCard(null);
+    };
+
 
     return (
         <div>
             <NavbarComponent />
             <div className="work">
                 <Container>
-                    <Row className="align-items-stretch gx-4 gy-4">
+                    <Row className="align-items-stretch gx-3 gy-3 mb-3">
                         <Col xs={12} md={9} xl={9}>
                             <div className='introduction-column'>
                                 <h1>Web Portfolio</h1>
@@ -31,21 +80,21 @@ const Work = () => {
                                             boundaries of my creativity and expertise.
                                         </h6>
                                         <br />
-                                        <div class="projects-number">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#6</div>                                    </Col>
+                                        <div class="projects-number">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#{totalCards}</div>                                    </Col>
                                     <Col xs={12} md={4} xl={4}>
                                         <table>
                                             <tbody>
                                                 <tr>
                                                     <td><img src={workCircleBlue} alt="Work Circle Blue" /></td>
-                                                    <td><h6>Personal Work</h6></td>
+                                                    <td><h6>Academic Work</h6></td>
                                                 </tr>
                                                 <tr>
                                                     <td><img src={workCircleGreen} alt="Work Circle Green" /></td>
                                                     <td><h6>Professional Work</h6></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src={workCircleWhite} alt="Work Circle White" /></td>
-                                                    <td><h6>Academic Work</h6></td>
+                                                    <td><img src={workCircleOrange} alt="Work Circle Orange" /></td>
+                                                    <td><h6>Personal Work</h6></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -76,8 +125,40 @@ const Work = () => {
                             </div>
                         </Col>
                     </Row>
+                    <Row className="align-items-stretch gx-3 gy-3">
+                        {workData.map((work, index) => {
+                            if (index === 2) {
+                                return (
+                                    <>
+                                        <Col xs={12} md={3} xl={3} key={index}>
+                                            <div className="work-card" onClick={() => handleCardClick(work)} >
+                                                <img src={work.image} alt={work.projectName} />
+                                            </div>
+                                        </Col>
+                                        <Col xs={12} md={3} xl={3} key={index}>
+                                            <div className='left-column'>
+                                                <Pie data={chartData} options={chartOptions} />
+                                            </div>
+                                        </Col>
+                                    </>
+
+                                );
+
+                            }
+                            return (
+                                <Col xs={12} md={3} xl={3} key={index}>
+                                    <div className="work-card" onClick={() => handleCardClick(work)} >
+                                        <img src={work.image} alt={work.projectName} />
+                                    </div>
+                                </Col>
+                            );
+                        })}
+                    </Row>
                 </Container>
             </div>
+            {selectedCard && (
+            <WorkDetails card={selectedCard} onClose={handleCloseDetails} />
+        )}
         </div>
     );
 };
