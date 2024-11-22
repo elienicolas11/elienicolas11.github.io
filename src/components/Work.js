@@ -1,21 +1,19 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { NavbarComponent } from './NavBar';
-import workImage from '../assets/images/work-image.png';
-import workCircleBlue from '../assets/images/work-circle-blue.png';
-import workCircleOrange from '../assets/images/work-circle-orange.png';
-import workCircleGreen from '../assets/images/work-circle-green.png';
-
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-import { workData } from './WorkData';
-import { WorkDetails } from './WorkDetails.js';
+import { NavbarComponent } from '@components/NavBar';
+import workImage from '@images/work-image.png';
+import workCircleBlue from '@images/work-circle-blue.png';
+import workCircleOrange from '@images/work-circle-orange.png';
+import workCircleGreen from '@images/work-circle-green.png';
+import { workData } from '@components/WorkData';
+import { WorkDetails } from '@components/WorkDetails.js';
 
-import '../styles/Work.css';
-import { color } from 'chart.js/helpers';
+import '@styles/Work.css';
 
 const Work = () => {
 
@@ -65,7 +63,7 @@ const Work = () => {
     return (
         <div>
             <NavbarComponent />
-            <div className="work">
+            <div className="work" id='work'>
                 <Container>
                     <Row className="align-items-stretch gx-3 gy-3 mb-3">
                         <Col xs={12} md={9} xl={9}>

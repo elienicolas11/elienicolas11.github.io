@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import '../styles/CustomAlerts.css';
-import iconBalloon from '../assets/images/custom-alert-icon-balloon.png'; // Remplacez par le bon chemin
+import '@styles/CustomAlerts.css';
+import iconBalloon from '@images/custom-alert-icon-balloon.png'; 
 
 export const CustomAlert = ({ show, message, onClose }) => {
     if (!show) return null;

@@ -2,14 +2,13 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
-import '../styles/Contact.css'
-import { CustomAlert } from './CustomAlert';
+import '@styles/Contact.css'
+import { CustomAlert } from '@components/CustomAlert';
 
 
-import phoneNumber from '../assets/images/contact-phone-number.png'
-import homeAddress from '../assets/images/contact-home-address.png'
-import emailAdrress from '../assets/images/contact-email-address.png'
-
+import phoneNumber from '@images/contact-phone-number.png'
+import homeAddress from '@images/contact-home-address.png'
+import emailAdrress from '@images/contact-email-address.png'
 export const Contact = () => {
 
     const [formData, setFormData] = useState({

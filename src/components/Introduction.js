@@ -2,8 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import '../styles/Introduction.css';
-import introductionImage from '../assets/images/introduction-image.svg';
+import '@styles/Introduction.css';
+import introductionImage from '@images/introduction-image.svg';
 
 export const Introduction = () => {
     
@@ -28,7 +28,7 @@ export const Introduction = () => {
     };
 
     return (
-        <section className="introduction">
+        <section className="introduction" id='about'>
             <Container className="introduction-container">
                 <Row className='align-items-center'>
                     <Col xs={12} md={8} xl={8} className="introduction-text-container">

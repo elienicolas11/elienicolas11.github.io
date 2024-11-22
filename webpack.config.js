@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/, 
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'], // Loaders for CSS
       },
       {
@@ -29,7 +29,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css'],
+    alias: {
+      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@components': path.resolve(__dirname, 'src/components'),
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

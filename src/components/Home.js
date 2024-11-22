@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Container, Row, Col } from 'react-bootstrap';
-import mainHomeImage from '../assets/images/main-home-image.png';
-import colorfulBg from '../assets/images/colorful-background.png';
-import gearWheel from '../assets/images/gear-wheel.png';
+import mainHomeImage from '@images/main-home-image.png';
+import colorfulBg from '@images/colorful-background.png';
+import gearWheel from '@images/gear-wheel.png';
 
 import 'C:/Users/Admin/Desktop/React/Portfolio/src/styles/Home.css';
 
 export const Home = () => {
   return (
-    <section className='home'>
+    <section className='home' id='home'>
       <Container>
         <Row className='align-items-center'>
           <Col xs={12} md={2} xl={2} className="home-text-container">

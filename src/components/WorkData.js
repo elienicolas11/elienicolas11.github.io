@@ -1,7 +1,7 @@
-import portfolioImage from '../assets/images/work-data-portfolio.png';
-import fullStackImage from '../assets/images/work-data-fullstack.png';
-import frontEndImage from '../assets/images/work-data-frontend.png';
-import resumeManager from '../assets/images/work-data-resume-manager.png';
+import portfolioImage from '@images/work-data-portfolio.png';
+import fullStackImage from '@images/work-data-fullstack.png';
+import frontEndImage from '@images/work-data-frontend.png';
+import resumeManager from '@images/work-data-resume-manager.png';
 
 export const workData = [
     {

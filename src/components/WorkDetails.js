@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/WorkDetails.css';
+import '@styles/WorkDetails.css';
 
 export const WorkDetails = ({ card, onClose }) => {
     return (
