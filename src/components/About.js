@@ -2,10 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import '@styles/Introduction.css';
-import introductionImage from '@images/introduction-image.svg';
+import '@styles/About.css';
+import aboutImage from '@images/about-image.svg';
 
-export const Introduction = () => {
+export const About = () => {
     
     const [imageAnimationComplete, setImageAnimationComplete] = useState(false);
     const [nameAnimationComplete, setNameAnimationComplete] = useState(false);
@@ -28,10 +28,10 @@ export const Introduction = () => {
     };
 
     return (
-        <section className="introduction" id='about'>
-            <Container className="introduction-container">
+        <section className="about" id='about'>
+            <Container className="about-container">
                 <Row className='align-items-center'>
-                    <Col xs={12} md={8} xl={8} className="introduction-text-container">
+                    <Col xs={12} md={8} xl={8} className="about-text-container">
                         {imageAnimationComplete && <h3>Hi, I'm</h3>}
                         <h1>
                             {name.split("").map((letter, index) => (
@@ -67,9 +67,9 @@ export const Introduction = () => {
                     </Col>
                     <Col xs={12} md={4} xl={4}>
                         <motion.img
-                            src={introductionImage}
-                            alt="Introduction Image"
-                            className="introduction-image"
+                            src={aboutImage}
+                            alt="About Image"
+                            className="about-image"
                             whileInView={{ x: 0 }} 
                             initial={{ x: '-10vw' }} 
                             transition={{ type: 'spring', stiffness: 50 }} 
