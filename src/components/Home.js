@@ -5,7 +5,7 @@ import mainHomeImage from '@images/main-home-image.png';
 import colorfulBg from '@images/colorful-background.png';
 import gearWheel from '@images/gear-wheel.png';
 
-import 'C:/Users/Admin/Desktop/React/Portfolio/src/styles/Home.css';
+import '@styles/Home.css';
 
 export const Home = () => {
   return (

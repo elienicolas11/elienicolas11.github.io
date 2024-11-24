@@ -39,9 +39,10 @@ export const NavbarComponent = () => {
           <Nav className="me-auto">
           {location.pathname === '/' && (
               <>
-                <Nav.Link as={Link} to="/work" className={activeLink === 'work' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('work')}>Work</Nav.Link>
                 <Nav.Link href='#about' className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('about')}>About</Nav.Link>
+                <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('skills')}>Skills</Nav.Link>
                 <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('contact')}>Contact</Nav.Link>
+                <Nav.Link as={Link} to="/work" className={activeLink === 'work' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('work')}>Work</Nav.Link>
               </>
             )}
           </Nav>

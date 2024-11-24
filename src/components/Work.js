@@ -1,17 +1,19 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-import { NavbarComponent } from '@components/NavBar';
+
 import workImage from '@images/work-image.png';
 import workCircleBlue from '@images/work-circle-blue.png';
 import workCircleOrange from '@images/work-circle-orange.png';
 import workCircleGreen from '@images/work-circle-green.png';
+
 import { workData } from '@components/WorkData';
 import { WorkDetails } from '@components/WorkDetails.js';
+import { NavbarComponent } from '@components/NavBar';
 
 import '@styles/Work.css';
 
@@ -28,7 +30,6 @@ const Work = () => {
         { AcademicWork: 0, ProfessionalWork: 0, PersonalWork: 0 }
     );
 
-    // Données pour le graphique
     const chartData = {
         labels: ['Academic Work', 'Professional Work', 'Personal Work'],
         datasets: [
@@ -48,13 +49,11 @@ const Work = () => {
         responsive: true,
     };
 
-    const [selectedCard, setSelectedCard] = useState(null); // Stocker la carte sélectionnée
+    const [selectedCard, setSelectedCard] = useState(null); 
 
-    // Fonction pour ouvrir la fenêtre de détails
     const handleCardClick = (work) => {
         setSelectedCard(work);
     };
-    // Fonction pour fermer la fenêtre de détails
     const handleCloseDetails = () => {
         setSelectedCard(null);
     };

@@ -26,6 +26,14 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource', // Webpack 5 built-in asset type
       },
+      {
+        // For PDF files
+        test: /\.pdf$/,
+        type: 'asset/resource', // Webpack 5 handles PDF files as assets
+        generator: {
+          filename: 'assets/[hash][ext]', // Output path for PDF files
+        },
+      },
     ]
   },
   resolve: {

@@ -91,22 +91,22 @@ input:focus:hover, textarea:focus:hover {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Ajout de la transition pour box-shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; 
     align-self: center;
 }
 
 .Contact-form-container button:hover {
-    background-color: #5f6a74;  /* Changer la couleur de fond lors du survol */
-    transform: scale(1.05);     /* Légère augmentation de la taille */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre */
+    background-color: #5f6a74;  
+    transform: scale(1.05);    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .Contact-form-container button:focus {
     outline: none;  
-    box-shadow: 0 0 10px rgba(118, 136, 153, 0.8); /* Ombrage spécifique au focus */
+    box-shadow: 0 0 10px rgba(118, 136, 153, 0.8); 
 }
 
 .Contact-form-container button:active {
-    transform: scale(0.98);  /* Réduction de la taille lors du clic pour simuler un appui */
-    background-color: #4e5b66;  /* Change la couleur de fond pour l'effet de clic */
+    transform: scale(0.98); 
+    background-color: #4e5b66;  
 }

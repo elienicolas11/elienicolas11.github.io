@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import '@styles/About.css';
 import aboutImage from '@images/about-image.svg';
+import resume from '../assets/resume.pdf';
 
 export const About = () => {
     
@@ -17,7 +18,6 @@ export const About = () => {
         "functionality with aesthetics, making sure that everything not only\n" +
         "works well but also looks beautiful.";
 
-    // Variants pour chaque lettre
     const letterAnimation = {
         hidden: { opacity: 0, x: -10 },
         visible: (i) => ({
@@ -64,6 +64,10 @@ export const About = () => {
                                 </motion.span>
                             ))}
                         </h6>
+                        <br/>
+                        <a href={resume} target="_blank" rel="noopener noreferrer">
+                            <button className='download-btn'>Download Resume</button>
+                        </a>
                     </Col>
                     <Col xs={12} md={4} xl={4}>
                         <motion.img
