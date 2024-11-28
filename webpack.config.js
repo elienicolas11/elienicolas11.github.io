@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname), // Racine du projet
     filename: 'bundle.js',
     assetModuleFilename: 'assets/[hash][ext][query]', // Custom output path for assets
   },
