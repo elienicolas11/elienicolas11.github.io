@@ -62,12 +62,12 @@ export const NavbarComponent = () => {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {location.pathname === '/' && (
+            {!location.pathname.endsWith('work')  && (
               <>
                 <Nav.Link
                   href="#about"
                   className={activeLink === 'about' ? 'active navbar-link' : 'navbar-link'}
-                  onClick={() => handleLinkClick('about')} // Ferme le menu après clic
+                  onClick={() => handleLinkClick('about')} 
                 >
                   About
                 </Nav.Link>
