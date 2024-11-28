@@ -1,8 +1,8 @@
 .skills{
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20%;
 }
 
 .skills-container {
@@ -42,7 +42,7 @@
     font-weight: bold;
     color: #778899;
     opacity: 0;
-    transition: opacity 1.0s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .skill-item:hover .skill-percentage {

@@ -4,19 +4,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Make sure it appears on top */
+    z-index: 1000; 
 }
 
 .custom-alert {
     background: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    flex-direction: column;
+    border-radius: 15px !important;
     max-width: 400px;
-    text-align: center;
     color : #778899;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -25,7 +27,6 @@
     background-color: #778899;
     color: #fff;
     border: none;
-    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;

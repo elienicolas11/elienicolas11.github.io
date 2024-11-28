@@ -1,5 +1,6 @@
 .work{
     padding-top: 106px;
+    margin-bottom: 15%;
 }
 
 .work .row {
@@ -25,6 +26,7 @@
 .left-column {
     padding: 1% 0;
     align-items: center;
+    overflow: hidden;
     
 }
 
@@ -48,6 +50,11 @@
     border-radius: 5vh;
   }
 
+  .left-column img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  } 
   
 .work-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease; 

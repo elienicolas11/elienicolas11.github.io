@@ -1,9 +1,8 @@
-.contact-section {
-    max-height: 100vh; 
-    padding: 10% !important;
+.contact-section { 
     display: flex;
     justify-content: center;
-    align-items: center;     
+    align-items: center;
+    margin: 20% 5% 10% 5%;     
 }
 
 .inline-text {

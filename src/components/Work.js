@@ -44,7 +44,7 @@ const Work = () => {
 
     const chartOptions = {
         plugins: {
-            legend: { display: true, labels: { color: '#fff' } },
+            legend: { display: true, labels: { color: '#fff'}},
         },
         responsive: true,
     };
@@ -101,20 +101,20 @@ const Work = () => {
                         </Col>
                         <Col xs={12} md={3} xl={3}>
                             <div className='left-column'>
-                                <img src={workImage} alt="Work Image" style={{ width: '180px', height: '200px' }} />
+                                <img src={workImage} alt="Work Image"/>
                                 <br />
                                 <table style={{ width: '80%' }}>
                                     <tbody>
                                         <tr>
-                                            <td><h6>Personal Work</h6></td>
+                                            <td><h6>Personal</h6></td>
                                             <td><h6>{PersonalWork}</h6></td>
                                         </tr>
                                         <tr>
-                                            <td><h6>Professional Work</h6></td>
+                                            <td><h6>Professional</h6></td>
                                             <td><h6>{ProfessionalWork}</h6></td>
                                         </tr>
                                         <tr>
-                                            <td><h6>Academic Work</h6></td>
+                                            <td><h6>Academic</h6></td>
                                             <td><h6>{AcademicWork}</h6></td>
                                         </tr>
                                     </tbody>
@@ -127,12 +127,12 @@ const Work = () => {
                             if (index === 2) {
                                 return (
                                     <>
-                                        <Col xs={12} md={3} xl={3} key={index}>
+                                        <Col xs={6} md={3} xl={3} key={index}>
                                             <div className="work-card" onClick={() => handleCardClick(work)} >
                                                 <img src={work.image} alt={work.projectName} />
                                             </div>
                                         </Col>
-                                        <Col xs={12} md={3} xl={3} key={index}>
+                                        <Col xs={6} md={3} xl={3} key={index}>
                                             <div className='left-column'>
                                                 <Pie data={chartData} options={chartOptions} />
                                             </div>
@@ -143,7 +143,7 @@ const Work = () => {
 
                             }
                             return (
-                                <Col xs={12} md={3} xl={3} key={index}>
+                                <Col xs={6} md={3} xl={3} key={index}>
                                     <div className="work-card" onClick={() => handleCardClick(work)} >
                                         <img src={work.image} alt={work.projectName} />
                                     </div>
