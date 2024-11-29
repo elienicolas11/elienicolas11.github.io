@@ -63,7 +63,7 @@ export const NavbarComponent = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             console.log(location.pathname);
-            {(location.pathname === '/' || location.pathname === '/Portfolio/')  && (
+            {(location.pathname === '/' || location.pathname.startsWith('/Portfolio') )  && (
               <>
                 <Nav.Link
                   href="#about"
