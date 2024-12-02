@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "@styles/Skills.css";
 import { FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaReact, FaAngular, FaJava, FaVuejs } from "react-icons/fa";
-import { SiSpringboot, SiCplusplus, SiCsharp, SiKotlin } from "react-icons/si";
+import { SiSpring, SiCplusplus, SiCsharp, SiKotlin } from "react-icons/si";
 
 
 export const skillIcons = {
@@ -13,7 +13,7 @@ export const skillIcons = {
     React: <FaReact size={50} color="#61DAFB" />,
     Angular: <FaAngular size={50} color="#DD0031" />,
     "Vue.js": <FaVuejs size={50} color="#4FC08D" />,
-    "Spring Boot": <SiSpringboot size={50} color="#6DB33F" />,
+    Spring: <SiSpring size={50} color="#6DB33F" />,
     "C++": <SiCplusplus size={50} color="#00599C" />,
     "C#": <SiCsharp size={50} color="#239120" />,
     Java: <FaJava size={50} color="#007396" />,
@@ -28,7 +28,7 @@ export const skillPercentage = {
     React: 100,
     Angular: 50,
     "Vue.js": 75,
-    "Spring Boot":75,
+    Spring :75,
     "C++": 100,
     "C#": 50,
     Java: 100,
@@ -38,7 +38,7 @@ export const skillPercentage = {
 
 const skillsGroups = [
     ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    ["React", "Angular", "Vue.js", "Spring Boot"],
+    ["React", "Angular", "Vue.js", "Spring"],
     ["C++", "C#", "Java", "Kotlin"],
 ];
 
