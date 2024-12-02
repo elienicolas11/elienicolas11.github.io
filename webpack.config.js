@@ -4,10 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname), // Racine du projet
+    path: path.resolve(__dirname), 
     filename: 'bundle.js',
-    assetModuleFilename: 'assets/[hash][ext][query]', // Custom output path for assets
+    assetModuleFilename: 'assets/[hash][ext][query]', 
   },
+
   module: {
     rules: [
       {
@@ -46,13 +47,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './Public/index.html',
+      template: './public/index.html',
       filename: 'index.html'
     })
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname),
     port: 3000,
-    historyApiFallback: true, // Redirect requests to index.html
+    historyApiFallback: true,
   }
 };
