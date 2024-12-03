@@ -4,38 +4,35 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname), 
+    path: path.resolve(__dirname), // Output dans la racine
     filename: 'bundle.js',
-    assetModuleFilename: 'assets/[hash][ext][query]', 
+    assetModuleFilename: 'assets/[hash][ext][query]',
   },
-
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'], // Loaders for CSS
+        use: ['style-loader', 'css-loader'],
       },
       {
-        // For image files (PNG, JPG, GIF, SVG)
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource', // Webpack 5 built-in asset type
+        type: 'asset/resource',
       },
       {
-        // For PDF files
         test: /\.pdf$/,
-        type: 'asset/resource', // Webpack 5 handles PDF files as assets
+        type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext]', // Output path for PDF files
+          filename: 'assets/[hash][ext]',
         },
       },
-    ]
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
@@ -44,18 +41,22 @@ module.exports = {
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@public': path.resolve(__dirname, 'public'),
-    }
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: 'index.html',
-      favicon: './src/assets/images/favicon.png', 
-    })
+      favicon: './src/assets/images/favicon.png',
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/404.html',
+      filename: '404.html',
+    }),
   ],
   devServer: {
     static: path.resolve(__dirname),
     port: 3000,
-    historyApiFallback: true,
-  }
+    historyApiFallback: true, // Fallback pour le serveur de développement
+  },
 };
