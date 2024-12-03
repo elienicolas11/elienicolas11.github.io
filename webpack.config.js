@@ -43,6 +43,7 @@ module.exports = {
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@components': path.resolve(__dirname, 'src/components'),
+      '@public': path.resolve(__dirname, 'public'),
     }
   },
   plugins: [
