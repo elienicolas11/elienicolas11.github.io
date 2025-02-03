@@ -2,6 +2,7 @@ import portfolioImage from '@images/work-data-portfolio.png';
 import fullStackImage from '@images/work-data-fullstack.png';
 import frontEndImage from '@images/work-data-frontend.png';
 import resumeManager from '@images/work-data-resume-manager.png';
+import bytImage from '@images/work-data-byt.png';
 
 export const workData = [
     {
@@ -31,6 +32,28 @@ export const workData = [
         image: portfolioImage,
         date: 'Octobre 2024'
     },
+    {
+        category: "Personal Work",
+        projectName: "Beyond The Closet",
+        context: "A personal project to showcase my skills in Angular and interactive web development.",
+        description: 
+            "Beyond The Closet is an interactive web application built with Angular that allows users to explore virtual outfits and mix & match different clothing items. It demonstrates my ability to create dynamic UI components, manage state efficiently, and implement smooth animations.",
+        link: "https://github.com/elienicolas11/beyond-the-closet.git",
+        technology: [
+            'Angular',
+            'TypeScript',
+            'SCSS',
+            'Three.js',
+        ],
+        comment: [
+            "Angular was used to structure the application, ensuring modularity and maintainability through reusable components.",
+            "TypeScript provided strong typing and better code organization, making the project scalable and error-free.",
+            "SCSS helped in styling the application with clean and maintainable CSS structures, using variables and mixins.",
+            "Three.js enabled the integration of interactive 3D models, enhancing the visual and immersive experience of the application.",
+        ],
+        image: bytImage,
+        date: "January 2025"
+    },    
     {
         category: 'Professional Work',
         projectName: 'Full-Stack Development Internship',

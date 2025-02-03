@@ -64,7 +64,7 @@ export const Contact = () => {
                     <Col xs={12} md={6} xl={6} className="Contact-text-container">
                         <div class="contact-us-title">
                             <h3 class="inline-text">Contact </h3>
-                            <h1 class="inline-text">Us</h1>
+                            <h1 class="inline-text">Me</h1>
                         </div>
                         <h6 class="contact-us-description">
                             For questions, technical assistance, or collaboration opportunities, you can either send a message
